@@ -1,0 +1,2 @@
+﻿  Driver.cpp
+S:\Projects\Personal\ExtProject\TarkyDriver\Driver.cpp(416,1): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "pch.h"' to your source?

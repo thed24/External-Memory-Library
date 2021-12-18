@@ -1,0 +1,12 @@
+S:\Projects\Personal\ExternalMemoryManipulator\obj\Debug\net472\ExternalMemoryManipulator.csproj.AssemblyReference.cache
+S:\Projects\Personal\ExternalMemoryManipulator\obj\Debug\net472\ExternalMemoryManipulator.GeneratedMSBuildEditorConfig.editorconfig
+S:\Projects\Personal\ExternalMemoryManipulator\obj\Debug\net472\ExternalMemoryManipulator.AssemblyInfoInputs.cache
+S:\Projects\Personal\ExternalMemoryManipulator\obj\Debug\net472\ExternalMemoryManipulator.AssemblyInfo.cs
+S:\Projects\Personal\ExternalMemoryManipulator\obj\Debug\net472\ExternalMemoryManipulator.csproj.CoreCompileInputs.cache
+S:\Projects\Personal\ExternalMemoryManipulator\bin\Debug\net472\ExternalMemoryManipulator.dll
+S:\Projects\Personal\ExternalMemoryManipulator\bin\Debug\net472\ExternalMemoryManipulator.pdb
+S:\Projects\Personal\ExternalMemoryManipulator\bin\Debug\net472\System.Net.Http.Formatting.dll
+S:\Projects\Personal\ExternalMemoryManipulator\bin\Debug\net472\Newtonsoft.Json.dll
+S:\Projects\Personal\ExternalMemoryManipulator\obj\Debug\net472\ExternalMemoryManipulator.csproj.CopyComplete
+S:\Projects\Personal\ExternalMemoryManipulator\obj\Debug\net472\ExternalMemoryManipulator.dll
+S:\Projects\Personal\ExternalMemoryManipulator\obj\Debug\net472\ExternalMemoryManipulator.pdb

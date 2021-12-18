@@ -1,0 +1,4 @@
+﻿  Driver.cpp
+S:\Projects\Personal\ExtProject\TarkyDriver\Driver.h(249,2): warning C4091: 'typedef ': ignored on left of 'nLDR_DATA_TABLE_ENTRY' when no variable is declared
+S:\Projects\Personal\ExtProject\TarkyDriver\Driver.cpp(237,2): warning C4091: 'typedef ': ignored on left of 'nPROCESS_BASIC_INFORMATION' when no variable is declared
+  TarkyDriver.vcxproj -> S:\Projects\Personal\ExtProject\Debug\TarkyDriver.dll

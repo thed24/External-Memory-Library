@@ -1,0 +1,11 @@
+﻿  Driver.cpp
+S:\Projects\Personal\ExtProject\TarkyDriver\Driver.h(249,2): warning C4091: 'typedef ': ignored on left of 'nLDR_DATA_TABLE_ENTRY' when no variable is declared
+S:\Projects\Personal\ExtProject\TarkyDriver\Driver.cpp(21,14): warning C4244: 'initializing': conversion from 'uintptr_t' to 'int', possible loss of data
+S:\Projects\Personal\ExtProject\TarkyDriver\Driver.cpp(236,2): warning C4091: 'typedef ': ignored on left of 'nPROCESS_BASIC_INFORMATION' when no variable is declared
+     Creating library S:\Projects\Personal\ExtProject\x64\Release\TarkyDriver.lib and object S:\Projects\Personal\ExtProject\x64\Release\TarkyDriver.exp
+  Generating code
+  4 of 260 functions ( 1.5%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  TarkyDriver.vcxproj -> S:\Projects\Personal\ExtProject\x64\Release\TarkyDriver.dll
