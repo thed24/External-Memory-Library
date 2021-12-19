@@ -5,16 +5,16 @@ using System.Text;
 
 namespace ExternalMemoryManipulator.Memory
 {
-    public class ExternalMemory : ProcessMemory
+    public class MemoryManager : ProcessMemory
     {
-        private readonly NativeProcesses ProcessMethods;
+        private readonly MarshallNativeMethods ProcessMethods;
 
-        public ExternalMemory(SafeMemoryHandle handle = null) : base(handle)
+        public MemoryManager(SafeMemoryHandle handle = null) : base(handle)
         {
-            ProcessMethods = new NativeProcesses(Environment.GetEnvironmentVariable("PROCESS_NAME"));
-            var initSucceed = ProcessMethods.InitializeDriver();
+            ProcessMethods = new MarshallNativeMethods(Environment.GetEnvironmentVariable("PROCESS_NAME"));
 
-            if (initSucceed is false) throw new Exception("Driver is not running properly.");
+            var initializeSucceed = ProcessMethods.InitializeDriver();
+            if (initializeSucceed is false) throw new Exception("Driver is not running properly.");
         }
 
         public override byte[] Read(IntPtr intPtr, int length)
@@ -163,13 +163,6 @@ namespace ExternalMemoryManipulator.Memory
             using var unmanaged = new LocalUnmanagedMemory(bufferSize);
             unmanaged.Write(byteArray);
             return unmanaged.Read<T>();
-        }
-
-        private static string GetGenericType<T>(Dictionary<int, T> list)
-        {
-            var type = list.GetType().GetProperty("Item")?.PropertyType;
-            var typeName = type.Name.ToLower();
-            return typeName;
         }
     }
 }
