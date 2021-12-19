@@ -11,5 +11,6 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="Process.NET" Version="1.0.8" />
   </ItemGroup>
 </Project>

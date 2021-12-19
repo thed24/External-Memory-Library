@@ -5,38 +5,38 @@ namespace ExternalMemoryManipulator.Memory
     public class NativeProcesses
     {
         private readonly int pID;
-        private readonly ulong gomOffset = 0x17F1CE8;
+
         public NativeProcesses(string processName)
         {
-            pID = GetProcessIDByName(processName);
+            pID = GetProcessIdByName(processName);
         }
 
-        public ulong ReadMemory(ulong lpBaseAddress)
+        public IntPtr ReadMemory(IntPtr lpBaseAddress)
         {
             return NativeMethods.read(pID, lpBaseAddress);
         }
 
-        public void ReadBytesFromMemory(ulong lpBaseAddress, byte[] buffer, int size)
+        public void ReadBytesFromMemory(IntPtr lpBaseAddress, byte[] buffer, int size)
         {
             NativeMethods.read_memory(pID, lpBaseAddress, buffer, size);
         }
 
-        public void WriteMemory(ulong lpBaseAddress, byte[] buffer)
+        public void WriteMemory(IntPtr lpBaseAddress, byte[] buffer)
         {
             NativeMethods.write(pID, lpBaseAddress, buffer);
         }
 
-        public ulong GetModuleBaseAddress(string modName)
+        public IntPtr GetModuleBaseAddress(string modName, IntPtr offset)
         {
-            return NativeMethods.GetModuleBaseAddress(pID, modName, gomOffset);
+            return NativeMethods.GetModuleBaseAddress(pID, modName, offset);
         }
 
-        public int GetProcessIDByName(string procName)
+        public int GetProcessIdByName(string procName)
         {
             return NativeMethods.GrabProcessByName(procName);
         }
 
-        public bool Init()
+        public bool InitializeDriver()
         {
             return NativeMethods.initialize();
         }
@@ -45,19 +45,19 @@ namespace ExternalMemoryManipulator.Memory
         {
             [DllImport("TarkyDriver.dll", CharSet = CharSet.None, ExactSpelling = false,
                 CallingConvention = CallingConvention.Cdecl)]
-            internal static extern ulong read(int hProcess, ulong lpBaseAddress);
+            internal static extern IntPtr read(int hProcess, IntPtr lpBaseAddress);
 
             [DllImport("TarkyDriver.dll", CharSet = CharSet.None, ExactSpelling = false,
                 CallingConvention = CallingConvention.Cdecl)]
-            internal static extern ulong read_memory(int hProcess, ulong lpBaseAddress, byte[] buffer, int size);
+            internal static extern IntPtr read_memory(int hProcess, IntPtr lpBaseAddress, byte[] buffer, int size);
 
             [DllImport("TarkyDriver.dll", CharSet = CharSet.None, ExactSpelling = false,
                 CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void write(int hProcess, ulong lpBaseAddress, byte[] buffer);
+            internal static extern void write(int hProcess, IntPtr lpBaseAddress, byte[] buffer);
 
             [DllImport("TarkyDriver.dll", CharSet = CharSet.None, ExactSpelling = false,
                 CallingConvention = CallingConvention.Cdecl)]
-            public static extern ulong GetModuleBaseAddress(int procHandle, string modName, ulong gomOffset);
+            public static extern IntPtr GetModuleBaseAddress(int procHandle, string modName, IntPtr gomOffset);
 
             [DllImport("TarkyDriver.dll", CharSet = CharSet.None, ExactSpelling = false,
                 CallingConvention = CallingConvention.Cdecl)]

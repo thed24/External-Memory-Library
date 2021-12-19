@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "yKJhTt2wrbeX4rEY8sFVF9UpZdotFMHdW/1t5YuKpR+5LsyM29aPrcs0z+F9rDTIy+ItrxRBwT4k3On91dlyVg==",
+  "dgSpecHash": "Buu/zTYkgzajdSb+n67rreraFeJcQw5E+TOfHk5dUe8M9HqDFNjyg0U7ntckICF9fciRAopIfI+/JkdlacDTkA==",
   "success": true,
-  "projectFilePath": "S:\\Projects\\Personal\\ExternalMemoryManipulator\\ExternalMemoryManipulator.csproj",
+  "projectFilePath": "S:\\Projects\\Personal\\ExternalMemoryLibrary\\ExternalMemoryManipulator\\ExternalMemoryManipulator.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Dom\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.7\\microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512",
     "C:\\Users\\Dom\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
-    "C:\\Users\\Dom\\.nuget\\packages\\newtonsoft.json\\6.0.4\\newtonsoft.json.6.0.4.nupkg.sha512"
+    "C:\\Users\\Dom\\.nuget\\packages\\newtonsoft.json\\6.0.4\\newtonsoft.json.6.0.4.nupkg.sha512",
+    "C:\\Users\\Dom\\.nuget\\packages\\process.net\\1.0.8\\process.net.1.0.8.nupkg.sha512"
   ],
   "logs": []
 }

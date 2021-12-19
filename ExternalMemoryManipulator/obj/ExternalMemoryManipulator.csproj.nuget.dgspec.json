@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "S:\\Projects\\Personal\\ExternalMemoryManipulator\\ExternalMemoryManipulator.csproj": {}
+    "S:\\Projects\\Personal\\ExternalMemoryLibrary\\ExternalMemoryManipulator\\ExternalMemoryManipulator.csproj": {}
   },
   "projects": {
-    "S:\\Projects\\Personal\\ExternalMemoryManipulator\\ExternalMemoryManipulator.csproj": {
+    "S:\\Projects\\Personal\\ExternalMemoryLibrary\\ExternalMemoryManipulator\\ExternalMemoryManipulator.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "S:\\Projects\\Personal\\ExternalMemoryManipulator\\ExternalMemoryManipulator.csproj",
+        "projectUniqueName": "S:\\Projects\\Personal\\ExternalMemoryLibrary\\ExternalMemoryManipulator\\ExternalMemoryManipulator.csproj",
         "projectName": "ExternalMemoryManipulator",
-        "projectPath": "S:\\Projects\\Personal\\ExternalMemoryManipulator\\ExternalMemoryManipulator.csproj",
+        "projectPath": "S:\\Projects\\Personal\\ExternalMemoryLibrary\\ExternalMemoryManipulator\\ExternalMemoryManipulator.csproj",
         "packagesPath": "C:\\Users\\Dom\\.nuget\\packages\\",
-        "outputPath": "S:\\Projects\\Personal\\ExternalMemoryManipulator\\obj\\",
+        "outputPath": "S:\\Projects\\Personal\\ExternalMemoryLibrary\\ExternalMemoryManipulator\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -51,6 +51,10 @@
             "Microsoft.CSharp": {
               "target": "Package",
               "version": "[4.7.0, )"
+            },
+            "Process.NET": {
+              "target": "Package",
+              "version": "[1.0.8, )"
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
