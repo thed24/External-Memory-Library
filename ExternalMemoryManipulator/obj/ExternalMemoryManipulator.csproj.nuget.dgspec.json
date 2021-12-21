@@ -44,17 +44,9 @@
         "net472": {
           "targetAlias": "net472",
           "dependencies": {
-            "Microsoft.AspNet.WebApi.Client": {
+            "System.Net.Http": {
               "target": "Package",
-              "version": "[5.2.7, )"
-            },
-            "Microsoft.CSharp": {
-              "target": "Package",
-              "version": "[4.7.0, )"
-            },
-            "Process.NET": {
-              "target": "Package",
-              "version": "[1.0.8, )"
+              "version": "[4.3.4, )"
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"

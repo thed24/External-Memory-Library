@@ -1,32 +1,32 @@
-﻿namespace ExternalMemoryManipulator.Memory
+﻿namespace ExternalMemoryManipulator.Native
 {
-    public class MarshallNativeMethods
+    public class MarshaledNativeMethods
     {
-        private readonly int processId;
+        private readonly int ProcessId;
 
-        public MarshallNativeMethods(string processName)
+        public MarshaledNativeMethods(string processName)
         {
-            processId = GetProcessIdByName(processName);
+            ProcessId = GetProcessIdByName(processName);
         }
 
         public IntPtr ReadMemory(IntPtr address)
         {
-            return NativeMethods.read(processId, address);
+            return NativeMethods.read(ProcessId, address);
         }
 
         public void ReadBytesFromMemory(IntPtr address, byte[] buffer, int size)
         {
-            NativeMethods.read_memory(processId, address, buffer, size);
+            NativeMethods.read_memory(ProcessId, address, buffer, size);
         }
 
         public void WriteMemory(IntPtr address, byte[] buffer)
         {
-            NativeMethods.write(processId, address, buffer);
+            NativeMethods.write(ProcessId, address, buffer);
         }
 
         public IntPtr GetModuleBaseAddress(string moduleName, IntPtr offset)
         {
-            return NativeMethods.GetModuleBaseAddress(processId, moduleName, offset);
+            return NativeMethods.GetModuleBaseAddress(ProcessId, moduleName, offset);
         }
 
         public int GetProcessIdByName(string processName)
