@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ExternalMemoryManipulator.Memory
 {
-    internal interface IMemoryManipulator
+    public interface IMemoryManipulator
     {
         public IntPtr ReadBaseAddressFor(string dll, IntPtr offset = default);
         public byte[] Read(IntPtr intPtr, int length);
