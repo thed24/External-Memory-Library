@@ -4,27 +4,26 @@ using System.Text;
 
 namespace ExternalMemoryManipulator.Memory
 {
-    public class MemoryManipulator : IMemoryManipulator
+    public class MemoryManipulator
     {
-        private readonly MarshaledNativeMethods ProcessMethods;
+        private static readonly MarshaledNativeMethods ProcessMethods;
 
-        public MemoryManipulator(string processName = null)
+        static MemoryManipulator()
         {
-            ProcessMethods = new MarshaledNativeMethods(processName ?? Environment.GetEnvironmentVariable("PROCESS_NAME"));
+            ProcessMethods = new MarshaledNativeMethods(Environment.GetEnvironmentVariable("PROCESS_NAME"));
 
             var initializeSucceed = ProcessMethods.InitializeDriver();
 
-            if (initializeSucceed is false) 
-                throw new Exception("Driver is not running properly.");
+            if (initializeSucceed is false) throw new Exception("Driver is not running properly.");
         }
 
-        public IntPtr ReadBaseAddressFor(string dll, IntPtr offset = default)
+        public static IntPtr ReadBaseAddressFor(string dll, IntPtr offset = default)
         {
             var baseAddress = ProcessMethods.GetModuleBaseAddress(dll, offset);
             return baseAddress;
         }
 
-        public byte[] Read(IntPtr intPtr, int length)
+        public static byte[] Read(IntPtr intPtr, int length)
         {
             var buffer = new byte[length];
             ProcessMethods.ReadBytesFromMemory(intPtr, buffer, buffer.Length);
@@ -32,14 +31,14 @@ namespace ExternalMemoryManipulator.Memory
             return buffer;
         }
 
-        public string Read(IntPtr address, Encoding encoding, int bufferSize)
+        public static string Read(IntPtr address, Encoding encoding, int bufferSize)
         {
             var buffer = new byte[bufferSize];
             ProcessMethods.ReadBytesFromMemory(address, buffer, buffer.Length);
             return encoding.GetString(buffer);
         }
 
-        public IntPtr Read(IntPtr address, params int[] offsets)
+        public static IntPtr Read(IntPtr address, params int[] offsets)
         {
             var currentAddress = address;
 
@@ -54,7 +53,7 @@ namespace ExternalMemoryManipulator.Memory
             return currentAddress;
         }
 
-        public T Read<T>(IntPtr intPtr)
+        public static T Read<T>(IntPtr intPtr)
         {
             try
             {
@@ -79,7 +78,7 @@ namespace ExternalMemoryManipulator.Memory
             }
         }
 
-        public void Write(IntPtr intPtr, byte[] bytesToWrite)
+        public static void Write(IntPtr intPtr, byte[] bytesToWrite)
         {
             try
             {
@@ -91,7 +90,7 @@ namespace ExternalMemoryManipulator.Memory
             }
         }
 
-        public void Write<T>(IntPtr intPtr, T value)
+        public static void Write<T>(IntPtr intPtr, T value)
         {
             var size = Marshal.SizeOf(typeof(T));
             var buffer = new byte[size];

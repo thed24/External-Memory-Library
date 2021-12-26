@@ -1,0 +1,12 @@
+S:\Projects\Personal\ExternalMemoryLibrary\ExternalMemoryManipulator\bin\Debug\net6.0\ExternalMemoryManipulator.deps.json
+S:\Projects\Personal\ExternalMemoryLibrary\ExternalMemoryManipulator\bin\Debug\net6.0\ExternalMemoryManipulator.dll
+S:\Projects\Personal\ExternalMemoryLibrary\ExternalMemoryManipulator\bin\Debug\net6.0\ref\ExternalMemoryManipulator.dll
+S:\Projects\Personal\ExternalMemoryLibrary\ExternalMemoryManipulator\bin\Debug\net6.0\ExternalMemoryManipulator.pdb
+S:\Projects\Personal\ExternalMemoryLibrary\ExternalMemoryManipulator\obj\Debug\net6.0\ExternalMemoryManipulator.csproj.AssemblyReference.cache
+S:\Projects\Personal\ExternalMemoryLibrary\ExternalMemoryManipulator\obj\Debug\net6.0\ExternalMemoryManipulator.GeneratedMSBuildEditorConfig.editorconfig
+S:\Projects\Personal\ExternalMemoryLibrary\ExternalMemoryManipulator\obj\Debug\net6.0\ExternalMemoryManipulator.AssemblyInfoInputs.cache
+S:\Projects\Personal\ExternalMemoryLibrary\ExternalMemoryManipulator\obj\Debug\net6.0\ExternalMemoryManipulator.AssemblyInfo.cs
+S:\Projects\Personal\ExternalMemoryLibrary\ExternalMemoryManipulator\obj\Debug\net6.0\ExternalMemoryManipulator.csproj.CoreCompileInputs.cache
+S:\Projects\Personal\ExternalMemoryLibrary\ExternalMemoryManipulator\obj\Debug\net6.0\ExternalMemoryManipulator.dll
+S:\Projects\Personal\ExternalMemoryLibrary\ExternalMemoryManipulator\obj\Debug\net6.0\ref\ExternalMemoryManipulator.dll
+S:\Projects\Personal\ExternalMemoryLibrary\ExternalMemoryManipulator\obj\Debug\net6.0\ExternalMemoryManipulator.pdb
