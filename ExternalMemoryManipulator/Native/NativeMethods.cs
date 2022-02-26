@@ -11,6 +11,9 @@ namespace ExternalMemoryManipulator.Native
         [DllImport("ExternalMemoryModule.dll", CharSet = CharSet.None, ExactSpelling = false,
             CallingConvention = CallingConvention.Cdecl)]
         internal static extern IntPtr read_memory(int hProcess, IntPtr lpBaseAddress, byte[] buffer, int size);
+        [DllImport("ExternalMemoryModule.dll", CharSet = CharSet.None, ExactSpelling = false,
+            CallingConvention = CallingConvention.Cdecl)]
+        internal static extern IntPtr read_memory(int hProcess, IntPtr lpBaseAddress, IntPtr bufferPtr, int size);
 
         [DllImport("ExternalMemoryModule.dll", CharSet = CharSet.None, ExactSpelling = false,
             CallingConvention = CallingConvention.Cdecl)]

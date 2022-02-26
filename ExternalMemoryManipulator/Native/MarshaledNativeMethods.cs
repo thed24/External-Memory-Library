@@ -19,6 +19,11 @@
             NativeMethods.read_memory(ProcessId, address, buffer, size);
         }
 
+        public void ReadBytesFromMemory(IntPtr address, IntPtr bufferPtr, int size)
+        {
+            NativeMethods.read_memory(ProcessId, address, bufferPtr, size);
+        }
+
         public void WriteMemory(IntPtr address, byte[] buffer)
         {
             NativeMethods.write(ProcessId, address, buffer);
