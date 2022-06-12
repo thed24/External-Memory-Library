@@ -1,7 +1,0 @@
-﻿C:\Program Files\Microsoft Visual Studio\2022\Preview\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(510,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (TarkyDriver.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  Driver.cpp
-S:\Projects\Personal\ExternalMemoryLibrary\ExternalMemoryModule\Driver.h(249,2): warning C4091: 'typedef ': ignored on left of 'nLDR_DATA_TABLE_ENTRY' when no variable is declared
-S:\Projects\Personal\ExternalMemoryLibrary\ExternalMemoryModule\Driver.cpp(21,14): warning C4244: 'initializing': conversion from 'uintptr_t' to 'int', possible loss of data
-S:\Projects\Personal\ExternalMemoryLibrary\ExternalMemoryModule\Driver.cpp(236,2): warning C4091: 'typedef ': ignored on left of 'nPROCESS_BASIC_INFORMATION' when no variable is declared
-     Creating library S:\Projects\Personal\TarkovProject\x64\Debug\ExternalMemoryModule.lib and object S:\Projects\Personal\TarkovProject\x64\Debug\ExternalMemoryModule.exp
-  TarkyDriver.vcxproj -> S:\Projects\Personal\TarkovProject\x64\Debug\ExternalMemoryModule.dll
