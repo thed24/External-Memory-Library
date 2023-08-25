@@ -12,6 +12,8 @@
     <ItemGroup>
       <ProjectReference Include="..\..\ExternalMemoryManipulator.Interfaces\ExternalMemoryManipulator.Interfaces\ExternalMemoryManipulator.Interfaces.csproj" />
       <ProjectReference Include="..\..\ExternalMemoryManipulator.Native\ExternalMemoryManipulator.Native\ExternalMemoryManipulator.Native.csproj" />
+      <ProjectReference Include="..\ExternalMemoryManipulator.Interfaces\ExternalMemoryManipulator.Interfaces.csproj" />
+      <ProjectReference Include="..\ExternalMemoryManipulator.Native\ExternalMemoryManipulator.Native.csproj" />
     </ItemGroup>
 
 </Project>
