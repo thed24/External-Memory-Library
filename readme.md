@@ -1,9 +1,7 @@
 # Background
 
-This repo acts as a DotNet interop interface for a C++ DLL that performs memory read and writes.
+This repository is an exploration into manipulating and dealing with video game memory and data. The goal is to create a library of functions that can be used to manipulate and interact with video game memory and data.
 
 ## Disclaimer
 
-This repository is for research purposes only, the use of this code is your responsibility.
-
-I take NO responsibility and/or liability for how you choose to use any of the source code available here. By using any of the files available in this repository, you understand that you are AGREEING TO USE AT YOUR OWN RISK. Once again, ALL files available here are for EDUCATION and/or RESEARCH purposes ONLY.
+DISCLAIMER: The code provided in this repository is strictly for educational and research purposes. Do not use this code for illegal activities. The author provides no guarantee about the code's functionality or safety and will not be held responsible for any consequences of using the code. Use at your own risk. If you choose to use or further distribute the files in this repository, you do so with full knowledge of the potential risks and consequences.

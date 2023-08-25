@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <PackageId>ExternalMemoryManipulator.Core</PackageId>
+        <Version>1.0.0</Version>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\ExternalMemoryManipulator.Interfaces\ExternalMemoryManipulator.Interfaces\ExternalMemoryManipulator.Interfaces.csproj" />
+      <ProjectReference Include="..\..\ExternalMemoryManipulator.Native\ExternalMemoryManipulator.Native\ExternalMemoryManipulator.Native.csproj" />
+    </ItemGroup>
+
+</Project>

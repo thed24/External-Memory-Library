@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32519.111
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExternalMemoryManipulator", "ExternalMemoryManipulator.csproj", "{C635B21E-177C-4D24-9849-7391D68BA518}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExternalMemoryManipulator.Native", "src\ExternalMemoryManipulator.Native\ExternalMemoryManipulator.Native\ExternalMemoryManipulator.Native.csproj", "{B222BAA6-B9CC-41A0-8F16-07FA509EE68B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExternalMemoryManipulator.Core", "src\ExternalMemoryManipulator.Core\ExternalMemoryManipulator.Core\ExternalMemoryManipulator.Core.csproj", "{04252C01-3224-41FC-8E01-03A55B52B2DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExternalMemoryManipulator.Interfaces", "src\ExternalMemoryManipulator.Interfaces\ExternalMemoryManipulator.Interfaces\ExternalMemoryManipulator.Interfaces.csproj", "{F45DD463-8A19-4DB2-95C8-3D5BEE330BB4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,18 @@ Global
 		{C635B21E-177C-4D24-9849-7391D68BA518}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C635B21E-177C-4D24-9849-7391D68BA518}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C635B21E-177C-4D24-9849-7391D68BA518}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B222BAA6-B9CC-41A0-8F16-07FA509EE68B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B222BAA6-B9CC-41A0-8F16-07FA509EE68B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B222BAA6-B9CC-41A0-8F16-07FA509EE68B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B222BAA6-B9CC-41A0-8F16-07FA509EE68B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04252C01-3224-41FC-8E01-03A55B52B2DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04252C01-3224-41FC-8E01-03A55B52B2DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04252C01-3224-41FC-8E01-03A55B52B2DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04252C01-3224-41FC-8E01-03A55B52B2DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F45DD463-8A19-4DB2-95C8-3D5BEE330BB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F45DD463-8A19-4DB2-95C8-3D5BEE330BB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F45DD463-8A19-4DB2-95C8-3D5BEE330BB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F45DD463-8A19-4DB2-95C8-3D5BEE330BB4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
