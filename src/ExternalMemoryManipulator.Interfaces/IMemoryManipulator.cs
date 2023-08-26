@@ -4,7 +4,7 @@ namespace ExternalMemoryManipulator.Interfaces;
 
 public interface IMemoryManipulator
 {
-    public void Write<T>(IntPtr intPtr, T value);
+    public void Write<T>(IntPtr intPtr, T value) where T : unmanaged;
     public void Write(IntPtr intPtr, byte[] bytesToWrite);
     public T Read<T>(IntPtr intPtr) where T : unmanaged;
     public IntPtr Read(IntPtr address, params int[] offsets);

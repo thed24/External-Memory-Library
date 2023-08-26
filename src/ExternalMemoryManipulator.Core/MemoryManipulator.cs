@@ -3,14 +3,16 @@ using System.Runtime.InteropServices;
 using System.Text;
 using ExternalMemoryManipulator.Interfaces;
 using ExternalMemoryManipulator.Native;
+using Microsoft.Extensions.Logging;
 
 namespace ExternalMemoryManipulator.Core;
 
 public class MemoryManipulator : IMemoryManipulator
 {
     private readonly MarshaledNativeMethods _processMethods;
+    private readonly ILogger<MemoryManipulator> _logger;
 
-    public MemoryManipulator()
+    public MemoryManipulator(ILoggerFactory loggerFactory)
     {
         string? process = Environment.GetEnvironmentVariable("PROCESS_NAME");
         if (process is null)
@@ -25,6 +27,8 @@ public class MemoryManipulator : IMemoryManipulator
         {
             throw new Exception("Driver is not running properly.");
         }
+        
+        _logger = loggerFactory.CreateLogger<MemoryManipulator>();
     }
 
     /// <summary>
@@ -36,8 +40,9 @@ public class MemoryManipulator : IMemoryManipulator
         {
             return _processMethods.GetModuleBaseAddress(dll, offset);
         }
-        catch
+        catch(Exception e)
         { 
+            _logger.LogError(e, "Failed to read base address for {Dll}", dll);
             return IntPtr.Zero; 
         }
     }
@@ -55,8 +60,9 @@ public class MemoryManipulator : IMemoryManipulator
 
             return buffer;
         }
-        catch
+        catch(Exception e)
         {
+            _logger.LogError(e, "Failed to read {Length} bytes from {IntPtr}", length, intPtr);
             return Array.Empty<byte>();
         }
     }
@@ -66,7 +72,14 @@ public class MemoryManipulator : IMemoryManipulator
     /// </summary>
     public void ReadIntoBuffer(IntPtr intPtr, IntPtr bufferPtr, int length)
     {
-        _processMethods.ReadBytesFromMemory(intPtr, bufferPtr, length);
+        try
+        {
+            _processMethods.ReadBytesFromMemory(intPtr, bufferPtr, length);
+        }
+        catch(Exception e)
+        {
+            _logger.LogError(e, "Failed to read {Length} bytes from {IntPtr} into {BufferPtr}", length, intPtr, bufferPtr);
+        }
     }
 
     /// <summary>
@@ -80,8 +93,9 @@ public class MemoryManipulator : IMemoryManipulator
             _processMethods.ReadBytesFromMemory(address, buffer, buffer.Length);
             return encoding.GetString(buffer);
         }
-        catch
+        catch(Exception e)
         {
+            _logger.LogError(e, "Failed to read {BufferSize} bytes from {Address} with {@Encoding}", bufferSize, address, encoding);
             return string.Empty;
         }
     }
@@ -107,8 +121,9 @@ public class MemoryManipulator : IMemoryManipulator
 
             return currentAddress;
         }
-        catch
+        catch(Exception e)
         {
+            _logger.LogError(e, "Failed to read {Offsets} from {Address}", offsets, address);
             return IntPtr.Zero;
         }
     }
@@ -130,8 +145,9 @@ public class MemoryManipulator : IMemoryManipulator
                 return MemoryMarshal.Read<T>(buffer);
             }
         }
-        catch
+        catch(Exception e)
         {
+            _logger.LogError(e, "Failed to read {Type} from {IntPtr}", typeof(T), intPtr);
             return default;
         }
     }
@@ -147,8 +163,7 @@ public class MemoryManipulator : IMemoryManipulator
         }
         catch (Exception e)
         {
-            Console.Write(e.Source);
-            Console.Write(e.Message);
+            _logger.LogError(e, "Failed to write {BytesToWrite} to {IntPtr}", bytesToWrite, intPtr);
         }
     }
 
@@ -156,6 +171,7 @@ public class MemoryManipulator : IMemoryManipulator
     ///     Writes the bytes of the given value to the pointer.
     /// </summary>
     public void Write<T>(IntPtr intPtr, T value)
+        where T : unmanaged
     {
         int size = Marshal.SizeOf(typeof(T));
         byte[] buffer = new byte[size];
@@ -169,8 +185,7 @@ public class MemoryManipulator : IMemoryManipulator
         }
         catch (Exception e)
         {
-            Console.Write(e.Source);
-            Console.Write(e.Message);
+            _logger.LogError(e, "Failed to write {Value} to {IntPtr}", value, intPtr);
         }
 
         _processMethods.WriteMemory(intPtr, buffer);
